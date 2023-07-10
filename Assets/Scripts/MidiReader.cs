@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
+using TMPro; // Se estiver usando o TextMeshPro
 
 public class MidiReader : MonoBehaviour
 {
-    public string file = "C:/Users/Gebruiker/Downloads/riven.mid";
+    public string file = "C:/Users/Samuel/Documents/MuseScore4/Scores/The_Flyer.mid";
 
     [Range(50, 500)]
     [SerializeField] private int BPM = 1;
@@ -19,6 +20,7 @@ public class MidiReader : MonoBehaviour
     [SerializeField] private bool debug = true;
     [Tooltip("Is required to be on if you swap from an instrument with multiple sources to an instrument with a single source. Otherwise, can be disabled")]
     [SerializeField] private bool alwaysUseSourceSeparation = true;
+    [SerializeField] private TextMeshProUGUI noteDisplay;
     private int lastNote = 0;
     private float volume = 1f;
     private static int defaultOffset = -12;
@@ -92,7 +94,11 @@ public class MidiReader : MonoBehaviour
             //Get the pitch for the next note, and play it.
             audioSource.pitch = FrequencyTable.GetFrequency((notes[i].NoteNumber + channelSettings.noteOffset + defaultOffset)) / channelSettings.sourceFrequency * playbackSettings.pitch;
             audioSource.Play();
-            if (debug) { Debug.Log(notes[i]); }
+            if (debug)
+            {
+                Debug.Log(notes[i]);
+                noteDisplay.text = notes[i].ToString();
+            }
             lastNote = (int)notes[i].Time;
         }
         if (debug) { Debug.Log("Song Finished."); }
