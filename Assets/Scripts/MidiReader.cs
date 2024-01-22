@@ -7,7 +7,7 @@ using TMPro; // Se estiver usando o TextMeshPro
 
 public class MidiReader : MonoBehaviour
 {
-    public string file = "C:/Users/Samuel/Documents/MuseScore4/Scores/The_Flyer.mid";
+    public string file = "/home/samuel/Downloads/Shaman_Fairy_Tale.mid";
 
     [Range(50, 500)]
     [SerializeField] private int BPM = 1;
