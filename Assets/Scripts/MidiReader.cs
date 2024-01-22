@@ -7,7 +7,7 @@ using TMPro; // Se estiver usando o TextMeshPro
 
 public class MidiReader : MonoBehaviour
 {
-    public string file = "/home/samuel/Downloads/Shaman_Fairy_Tale.mid";
+    public string file = "/home/samuel/Downloads/Shaman_Fairy_Tale-reduzida.mid";
 
     [Range(50, 500)]
     [SerializeField] private int BPM = 1;

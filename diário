@@ -1,0 +1,10 @@
+Importei a lib DryWetMidi, pelo próprio Unit (dentro do projeto)
+Mudei tudo kkkkkkkkk
+
+
+
+Parte de reprodução deu certo, assim como a identificação da nota
+Vou simplificar o jogo, apenas mostrando qual tecla precisa apertar (e talvez, lendo se a pessoa apertou a tecla correta ou não)
+Resta agora desenhar o teclado (49 teclas, ou menos - inclusive, pode ser uma função, a opção de selecionar quantas teclas)
+Depois a parte das notas chegando e tal...
+
